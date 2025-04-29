@@ -1,0 +1,146 @@
+/**
+ * dragdrop.css
+ * CSS styles for DragDropJS library
+ * Uses relative units for responsive design
+ */
+
+/* Base styles for draggable elements */
+.draggable {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  touch-action: none;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+/* Style for currently dragging element */
+.dragging {
+  cursor: grabbing;
+  opacity: 0.8;
+  z-index: 1000;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Style for droppable zones */
+.droppable {
+  position: relative;
+  min-height: 2rem;
+  transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+/* Style for droppable when draggable is over it */
+.drop-over {
+  background-color: rgba(0, 120, 255, 0.1);
+  border: 0.125rem dashed rgba(0, 120, 255, 0.5);
+}
+
+/* Style for valid drop targets */
+.drop-valid {
+  outline: 0.125rem solid rgba(0, 200, 0, 0.5);
+}
+
+/* Style for invalid drop targets */
+.drop-invalid {
+  outline: 0.125rem solid rgba(200, 0, 0, 0.5);
+}
+
+/* Handle for draggable elements */
+.drag-handle {
+  cursor: grab;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin-right: 0.5rem;
+  background: #f0f0f0;
+  border-radius: 0.25rem;
+}
+
+.drag-handle:hover {
+  background: #e0e0e0;
+}
+
+/* Placeholder for drag source */
+.drag-placeholder {
+  border: 0.125rem dashed #ccc;
+  background-color: #f9f9f9;
+  visibility: visible !important;
+}
+
+/* Accessibility - focus styles */
+.draggable:focus {
+  outline: 0.125rem solid #4d90fe;
+  outline-offset: 0.125rem;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 48rem) { /* 768px */
+  .draggable {
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .drag-handle {
+    padding: 0.5rem 0.75rem; /* Larger touch target */
+  }
+  
+  /* Increase drop zone visual cues for touch */
+  .drop-over {
+    background-color: rgba(0, 120, 255, 0.2);
+    border: 0.25rem dashed rgba(0, 120, 255, 0.6);
+  }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 48.0625rem) and (max-width: 64rem) { /* 769px to 1024px */
+  .draggable {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+}
+
+/* Animation for drop completion */
+@keyframes drop-success {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.drop-success {
+  animation: drop-success 0.3s ease-in-out;
+}
+
+/* Animation for drop rejection */
+@keyframes drop-reject {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-0.5rem); }
+  40%, 80% { transform: translateX(0.5rem); }
+}
+
+.drop-reject {
+  animation: drop-reject 0.5s ease-in-out;
+}
+
+/* Helper class to show element is draggable */
+.draggable-indicator::before {
+  content: "⋮⋮";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: #888;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: grab;
+}
+
+/* For screen readers */
+.sr-only {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juegos de Pensamiento Computacional</title>
+  <link rel="stylesheet" href="dragdrop.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Juegos de Pensamiento Computacional</h1>
+      <p>Actividades divertidas para aprender lógica</p>
+    </header>
+    
+    <!-- Constructor de Algoritmos -->
+    <section class="demo-section">
+      <h2 class="section-title">Constructor de Algoritmos</h2>
+      <div class="instructions">
+        <p>Arrastra los comandos entre columnas para construir tu algoritmo:</p>
+        <ul>
+          <li>Los comandos están codificados por colores según su función</li>
+          <li>¡Organiza los pasos en el orden correcto para que el robot llegue a la meta!</li>
+          <li>Compatible con dispositivos móviles - funciona con pantallas táctiles</li>
+        </ul>
+      </div>
+      
+      <div class="row">
+        <!-- Comandos Disponibles -->
+        <div class="col">
+          <div class="drop-zone todo-zone" id="todo-zone">
+            <h3 class="drop-zone-title">Comandos Disponibles</h3>
+            <div class="task-item draggable priority-high" id="task1">
+              <h4>Avanzar</h4>
+              <p>El robot avanza un paso hacia adelante</p>
+            </div>
+            <div class="task-item draggable priority-medium" id="task2">
+              <h4>Girar Derecha</h4>
+              <p>El robot gira 90° hacia la derecha</p>
+            </div>
+            <div class="task-item draggable priority-low" id="task3">
+              <h4>Repetir 3 Veces</h4>
+              <p>Repite el siguiente comando tres veces</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Programa Principal -->
+        <div class="col">
+          <div class="drop-zone in-progress-zone" id="progress-zone">
+            <h3 class="drop-zone-title">Programa Principal</h3>
+            <div class="task-item draggable priority-high" id="task4">
+              <h4>Si Hay Obstáculo</h4>
+              <p>Comprueba si hay un obstáculo adelante</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Acciones Alternativas -->
+        <div class="col">
+          <div class="drop-zone completed-zone" id="completed-zone">
+            <h3 class="drop-zone-title">Acciones Alternativas</h3>
+            <div class="task-item draggable priority-medium" id="task5">
+              <h4>Girar Izquierda</h4>
+              <p>El robot gira 90° hacia la izquierda</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Rompecabezas de Secuencia Lógica -->
+    <section class="demo-section">
+      <h2 class="section-title">Rompecabezas de Secuencia Lógica</h2>
+      <div class="instructions">
+        <p>Ordena las piezas para crear una secuencia lógica correcta:</p>
+        <ul>
+          <li>Usa las manijas para mover las piezas arriba y abajo</li>
+          <li>Cada afirmación debe seguir lógicamente a la anterior</li>
+          <li>¡Completa el razonamiento para resolver el rompecabezas!</li>
+        </ul>
+      </div>
+      
+      <div class="sortable-list" id="sortable-list">
+        <div class="list-item draggable" id="item1">
+          <div class="handle drag-handle">⋮⋮</div>
+          <div>Si está lloviendo...</div>
+        </div>
+        <div class="list-item draggable" id="item2">
+          <div class="handle drag-handle">⋮⋮</div>
+          <div>Entonces necesito un paraguas</div>
+        </div>
+        <div class="list-item draggable" id="item3">
+          <div class="handle drag-handle">⋮⋮</div>
+          <div>Si tengo un paraguas...</div>
+        </div>
+        <div class="list-item draggable" id="item4">
+          <div class="handle drag-handle">⋮⋮</div>
+          <div>Entonces no me mojaré</div>
+        </div>
+        <div class="list-item draggable" id="item5">
+          <div class="handle drag-handle">⋮⋮</div>
+          <div>Por lo tanto, si llueve y tengo un paraguas, no me mojaré</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Colector de Bloques de Código -->
+    <section class="demo-section">
+      <h2 class="section-title">Colector de Bloques de Código</h2>
+      <div class="instructions">
+        <p>Arrastra los bloques de código para crear tu programa:</p>
+        <ul>
+          <li>Cada bloque tiene una función específica para tu programa</li>
+          <li>Combina bloques diferentes para crear soluciones creativas</li>
+          <li>¡Construye un programa completo con todos los bloques que necesitas!</li>
+        </ul>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <h3 class="section-title">Bloques Disponibles</h3>
+          <div class="product-grid">
+            <div class="product-item draggable" id="product1">
+              <div class="product-img">Bucle</div>
+              <p>Bloque de Repetición</p>
+              <p>Repite acciones varias veces</p>
+            </div>
+            <div class="product-item draggable" id="product2">
+              <div class="product-img">Condición</div>
+              <p>Bloque de Decisión</p>
+              <p>Comprueba si algo es verdadero</p>
+            </div>
+            <div class="product-item draggable" id="product3">
+              <div class="product-img">Acción</div>
+              <p>Bloque de Movimiento</p>
+              <p>Hace que algo ocurra en el juego</p>
+            </div>
+            <div class="product-item draggable" id="product4">
+              <div class="product-img">Variable</div>
+              <p>Bloque de Memoria</p>
+              <p>Almacena información importante</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <h3 class="section-title">Mi Programa (<span id="cart-count">0</span> bloques)</h3>
+          <div class="shopping-cart droppable" id="shopping-cart">
+            <!-- Los bloques de código se añadirán aquí -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Archivos de la biblioteca DragDropJS -->
+  <script src="Utils.js"></script>
+  <script src="EventHandler.js"></script>
+  <script src="PositionCalculator.js"></script>
+  <script src="Draggable.js"></script>
+  <script src="Droppable.js"></script>
+  <script src="DragDropManager.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
