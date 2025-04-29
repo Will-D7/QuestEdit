@@ -1,0 +1,49 @@
+.drag-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sentence {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .drop-zone {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border: #aaa;
+    margin-left: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .option {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: grab;
+  }
+  
+  .option:hover {
+    background-color: #626262;
+  }
+  
+  .success-message {
+    margin-top: 20px;
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

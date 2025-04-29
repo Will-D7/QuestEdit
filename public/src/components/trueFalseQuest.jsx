@@ -6,7 +6,7 @@ function TrueFalseQuestion() {
   const [answerSelected, setAnswerSelected] = useState(null);
 
   // data
-  const question = "Los pingüinos pueden volar.";
+  const question = "El protocolo HTTP es el mas seguro.";
   const correctAnswer = false;
 
   // fucntion
