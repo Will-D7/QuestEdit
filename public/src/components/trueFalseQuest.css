@@ -1,0 +1,47 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .question {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .option-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 120px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .option-button:hover {
+    background-color: #6d6d6d;
+  }
+  
+  .correct {
+    color: green;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .incorrect {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
