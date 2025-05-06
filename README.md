@@ -7,8 +7,9 @@ cd frontend
 npm create vite@latest .
 # insstall dependecys
 npm install
-# up dev server
-npm run dev
-
-# React-router
+# insstall React-router
 npm install react-router-dom
+
+
+# up dev server - Iniciar frontend desde rama main, o development(postproduccion)
+npm run dev
