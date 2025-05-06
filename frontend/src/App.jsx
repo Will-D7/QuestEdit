@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import RobotGame from "./pages/RobotGame";
+import RobotGame from "./components/RobotGame";
 
 function App() {
   return (
