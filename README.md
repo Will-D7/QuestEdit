@@ -9,3 +9,6 @@ npm create vite@latest .
 npm install
 # up dev server
 npm run dev
+
+# React-router
+npm install react-router-dom
