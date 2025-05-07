@@ -1,0 +1,324 @@
+/* Classroom Screen Styles */
+.classroom-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Robot Grid */
+.classroom-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin: 0 auto;
+  background-color: #e8f5e9;
+  padding: 1.25rem;
+  border-radius: 0.9375rem; /* 15px */
+  box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,0.15);
+  position: relative;
+  border: 0.1875rem solid #81c784;
+  width: 100%;
+  max-width: 31.25rem; /* 500px */
+  aspect-ratio: 4/3; /* Maintain the grid aspect ratio */
+}
+
+/* Desks */
+.desk {
+  background-color: #d7ccc8;
+  border: 0.125rem solid #a1887f;
+  border-radius: 0.5rem; /* 8px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.desk::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border: 0.0625rem dashed #8d6e63;
+  border-radius: 0.25rem; /* 4px */
+}
+
+/* Objects on desks */
+.object {
+  width: 70%;
+  height: 70%;
+  border-radius: 0.375rem; /* 6px */
+  z-index: 1;
+  box-shadow: 0 0.1875rem 0.375rem rgba(0,0,0,0.16);
+  transition: all 0.2s ease;
+}
+
+.book {
+  background-color: #3f51b5;
+  position: relative;
+}
+
+.book::after {
+  content: "📚";
+  position: absolute;
+  font-size: 1.25rem; /* 20px */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.apple {
+  background-color: #e53935;
+  border-radius: 50%;
+  position: relative;
+}
+
+.apple::after {
+  content: "🍎";
+  position: absolute;
+  font-size: 1.25rem; /* 20px */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pencil {
+  background-color: #ffc107;
+  height: 70%;
+  width: 20%;
+  position: relative;
+}
+
+.pencil::after {
+  content: "✏️";
+  position: absolute;
+  font-size: 1.25rem; /* 20px */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Robot */
+.robot {
+  background-color: #6a5acd;
+  border: 0.1875rem solid #5949b5;
+  border-radius: 0.9375rem; /* 15px */
+  position: absolute;
+  width: 4.5em; /* Relative to the grid size */
+  height: 4.5em; /* Relative to the grid size */
+  z-index: 10;
+  transition: all 0.5s ease;
+  animation: robotPulse 2s infinite alternate;
+}
+
+@keyframes robotPulse {
+  from {
+    box-shadow: 0 0 0.3125rem 0.125rem rgba(106, 90, 205, 0.5);
+  }
+  to {
+    box-shadow: 0 0 0.9375rem 0.3125rem rgba(106, 90, 205, 0.7);
+  }
+}
+
+.robot::before {
+  content: "🤖";
+  position: absolute;
+  font-size: 1.5rem; /* 24px */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Robot status display */
+.robot-status {
+  background-color: white;
+  padding: 0.9375rem;
+  border-radius: 0.625rem; /* 10px */
+  margin: 1.25rem auto;
+  width: 100%;
+  max-width: 25rem; /* 400px */
+  box-shadow: 0 0.25rem 0.9375rem rgba(0,0,0,0.1);
+}
+
+.robot-status h3 {
+  margin-top: 0;
+  color: #6a5acd;
+  font-size: 1.25rem; /* 20px */
+}
+
+.robot-message {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.625rem;
+}
+
+/* Command history display */
+.command-history {
+  padding: 0.625rem;
+  background-color: #f5f5f5;
+  border-radius: 0.3125rem; /* 5px */
+  max-height: 6.25rem; /* 100px */
+  overflow-y: auto;
+  margin-top: 0.625rem;
+  text-align: left;
+  font-family: monospace;
+  font-size: 0.875rem; /* 14px */
+}
+
+/* Control buttons */
+.program-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9375rem;
+  margin-top: 1.25rem;
+  width: 100%;
+  max-width: 25rem; /* 400px */
+}
+
+@media (min-width: 48rem) { /* 768px */
+  .program-controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .classroom-grid {
+    max-width: 37.5rem; /* 600px */
+  }
+  
+  .robot::before {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+@media (min-width: 64rem) { /* 1024px */
+  .classroom-grid {
+    max-width: 43.75rem; /* 700px */
+  }
+}
+
+/* Carried objects */
+.carried-object {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 75%;
+  border-radius: 6px;
+  z-index: 15;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.carried-object.book {
+  background-color: #3f51b5;
+  border-radius: 2px;
+}
+
+.carried-object.book::after {
+  content: "📚";
+  position: absolute;
+  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carried-object.apple {
+  background-color: #e53935;
+  border-radius: 50%;
+}
+
+.carried-object.apple::after {
+  content: "🍎";
+  position: absolute;
+  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carried-object.pencil {
+  background-color: #ffc107;
+  height: 20px;
+  width: 6px;
+}
+
+.carried-object.pencil::after {
+  content: "✏️";
+  position: absolute;
+  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Animation for picking/dropping */
+@keyframes pickUpAction {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.robot-action {
+  animation: pickUpAction 0.5s ease;
+}
+
+/* Dropped objects on floor */
+.dropped-object {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  border-radius: 0.375rem;
+  z-index: 1;
+  box-shadow: 0 0.1875rem 0.375rem rgba(0,0,0,0.16);
+}
+
+.dropped-object.book {
+  background-color: #3f51b5;
+  position: relative;
+}
+
+.dropped-object.book::after {
+  content: "📖";
+  position: absolute;
+  font-size: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dropped-object.apple {
+  background-color: #e53935;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dropped-object.apple::after {
+  content: "🍎";
+  position: absolute;
+  font-size: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dropped-object.pencil {
+  background-color: #ffc107;
+  height: 70%;
+  width: 20%;
+  position: relative;
+}
+
+.dropped-object.pencil::after {
+  content: "✏️";
+  position: absolute;
+  font-size: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
