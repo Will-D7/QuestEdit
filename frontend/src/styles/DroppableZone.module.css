@@ -1,0 +1,26 @@
+.dropZone {
+  border: 2px dashed #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 12px;
+  background-color: #3d3d3d;
+  transition: background-color 0.3s ease;
+}
+
+.draggingOver {
+  background-color: #e0f7fa;
+  border-color: #26c6da;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.emptyMessage {
+  font-style: italic;
+  color: #888;
+  margin: 8px 0;
+}

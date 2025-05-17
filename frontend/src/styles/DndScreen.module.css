@@ -1,0 +1,59 @@
+.programRobotScreen {
+  padding: 24px;
+  font-family: sans-serif;
+}
+
+.instructions {
+  margin: 12px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.programContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.commandsArea,
+.sequenceArea {
+  flex: 1;
+  min-width: 300px;
+}
+
+.programControls {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.playButton {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.playButton:hover {
+  background-color: #43a047;
+}
+
+.controlButton {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: #d32f2f;
+}
