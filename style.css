@@ -1,0 +1,146 @@
+:root {
+   --pixel-size: 2px;
+   --grid-cell: calc( var(--pixel-size) * 16);
+   --bg: #9fa7e4;
+}
+@media( min-width: 700px ) {
+   :root {
+      --pixel-size: 3px;
+   }
+}
+@media( min-width: 1000px ) {
+   :root {
+      --pixel-size: 4px;
+   }
+}
+
+html, body {
+   height: 100%;
+}
+
+body {
+   background: var(--bg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.pixel-art {
+   image-rendering: pixelated;
+}
+
+.frame {
+   /* Esto es solo para decoración del Pen */
+   width: calc(var(--pixel-size) * 160);
+   height: calc(var(--pixel-size) * 144);
+   outline: var(--pixel-size) solid #fff;
+   z-index:1; 
+   position:relative;
+}
+
+.camera {
+   width: calc(var(--pixel-size) * 160);
+   height: calc(var(--pixel-size) * 144);
+   overflow: hidden;
+   background: #61ddf7;
+   position:relative;
+}
+
+.map {
+   image-rendering: pixelated;
+   background-image: url("map.png");
+   background-size: 100%;
+   width: calc(13 * var(--grid-cell));
+   height: calc(10 * var(--grid-cell));
+   position: relative;
+}
+
+.character {
+   width: calc( var(--grid-cell)* 2 );
+   height: calc( var(--grid-cell)* 2 );
+   position: absolute;
+   overflow:hidden;
+}
+
+.shadow {
+   width: calc( var(--grid-cell)* 2 );
+   height: calc( var(--grid-cell)* 2 );
+   position: absolute;
+   left:0;
+   top:0;
+   background: url("charactershadow.png") no-repeat no-repeat;
+   background-size: 100%;
+}
+
+.character_spritesheet {
+   position: absolute;
+   background: url("character.png") no-repeat no-repeat;
+   background-size: 100%;
+   width: calc( var(--grid-cell)* 8 );
+   height: calc( var(--grid-cell)* 8 );
+}
+
+.character[facing="right"] .character_spritesheet {
+   background-position-y: calc( var(--pixel-size) * -32 );
+}
+.character[facing="up"] .character_spritesheet {
+   background-position-y: calc( var(--pixel-size) * -64 );
+}
+.character[facing="left"] .character_spritesheet {
+   background-position-y: calc( var(--pixel-size) * -96 );
+}
+.character[walking="true"] .character_spritesheet {
+   animation: walkAnimation 0.6s steps(4) infinite; 
+}
+
+
+@keyframes walkAnimation {
+  from {
+    transform: translate3d(0%,0%,0);
+  }
+  to {
+    transform: translate3d(-100%,0%,0);
+  }
+}
+
+/* Objetos de Torres de Hanoi - vista desde arriba */
+.pole-base {
+   position: absolute;
+   width: calc(var(--pixel-size) * 8);
+   height: calc(var(--pixel-size) * 8);
+   background-color: #8B4513;
+   border: calc(var(--pixel-size) * 1) solid #333;
+   transform: translateX(-50%);
+   z-index: 1;
+}
+
+.square {
+   position: absolute;
+   z-index: 2;
+   box-sizing: border-box;
+   border: calc(var(--pixel-size) * 1) solid #333;
+}
+
+.square-1 {
+   width: calc(var(--pixel-size) * 8);
+   height: calc(var(--pixel-size) * 8);
+   background-color: #FF6B6B;
+}
+
+.square-2 {
+   width: calc(var(--pixel-size) * 12);
+   height: calc(var(--pixel-size) * 12);
+   background-color: #4ECDC4;
+}
+
+.square-3 {
+   width: calc(var(--pixel-size) * 16);
+   height: calc(var(--pixel-size) * 16);
+   background-color: #FFE66D;
+}
+
+.square-4 {
+   width: calc(var(--pixel-size) * 20);
+   height: calc(var(--pixel-size) * 20);
+   background-color: #6B5B95;
+}
