@@ -1,4 +1,3 @@
-
 import '../styles/Home.css';
 import { Link } from 'react-router-dom';
 
@@ -16,52 +15,35 @@ function Home() {
       </header>
 
       <div className="main">
-        <aside class="sidebar">
-          <div class="sidebar-content">
-            <nav class="sidebar-nav">
-              <div class="nav-group">
-                <h3 class="nav-title">Tipos de preguntas</h3>
-                <a routerLink="/templates/multiple-choice" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128221; Seleccion multiple</span>
-                </a>
-                <a routerLink="/templates/drag-drop" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128260; Arrastra y suelta</span>
-                </a>
-                <a routerLink="/templates/matching" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128279; Emparejar</span>
-                </a>
-                <a routerLink="/templates/puzzle" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#129513; Puzzle</span>
-                </a>
-                <a routerLink="/templates/sorting" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128202; Clasificar</span>
-                </a>
-                
+        <aside className="sidebar">
+          <div className="sidebar-content">
+            <nav className="sidebar-nav">
+              <div className="nav-group">
+                <h3 className="nav-title">Tipos de preguntas</h3>
+                <Link to="/templates/multiple-choice" className="nav-item">📝 Selección múltiple</Link>
+                <Link to="/templates/drag-drop" className="nav-item">🧲 Arrastra y suelta</Link>
+                <Link to="/templates/matching" className="nav-item">🔗 Emparejar</Link>
+                <Link to="/templates/puzzle" className="nav-item">🧩 Puzzle</Link>
+                <Link to="/templates/sorting" className="nav-item">📊 Clasificar</Link>
               </div>
-              
-              <div class="nav-group">
-                <h3 class="nav-title">Manejo</h3>
-                <a routerLink="/questions" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128218; Mis preguntas</span>
-                </a>
-                <a routerLink="/collections" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128193; Coleccion</span>
-                </a>
-                <a routerLink="/shared" routerLinkActive="active" class="nav-item">
-                  <span class="nav-label">&#128101; Compartidos conmigo</span>
-                </a>
+
+              <div className="nav-group">
+                <h3 className="nav-title">Manejo</h3>
+                <Link to="/questions" className="nav-item">📚 Mis preguntas</Link>
+                <Link to="/collections" className="nav-item">📁 Colección</Link>
+                <Link to="/shared" className="nav-item">👥 Compartidos conmigo</Link>
+                <Link to="/editors" className="nav-item">Editores</Link>
               </div>
             </nav>
           </div>
         </aside>
+
         <div className="dashboard">
           <div className="home-container">
             <h1 className="home-title">Bienvenido a QuestEdit</h1>
             <p className="home-description">Elige el tipo de Juego para comenzar a practicar:</p>
-            
             <div className="home-buttons">
               <Link to="/robotGame" className="home-button">Juego ROBOT</Link>
-              
             </div>
           </div>
         </div>
@@ -71,4 +53,3 @@ function Home() {
 }
 
 export default Home;
-
