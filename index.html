@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn to program</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tabs.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="collectibles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="tab-headers">
+                <button class="tab-header active" data-tab="grid">
+                    <span class="tab-icon">🎮</span>
+                    <span class="tab-text" data-i18n="tabs.grid">Grid</span>
+                </button>
+                <button class="tab-header" data-tab="commands">
+                    <span class="tab-icon">📝</span>
+                    <span class="tab-text" data-i18n="tabs.commands">Cmd</span>
+                </button>
+                <button class="tab-header" data-tab="settings">
+                    <span class="tab-icon">⚙️</span>
+                    <span class="tab-text" data-i18n="tabs.settings">Settings</span>
+                </button>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="content-panel active" id="grid-panel">
+                <div class="stage-area">
+                    <div id="grid-wrapper" class="grid-wrapper">
+                        <div id="grid-container" class="grid-container">
+                            <div id="grid" class="grid"></div>
+                            <div id="hero-container" class="hero-container"></div>
+                        </div>
+                        <div id="floating-controls" class="floating-controls">
+                            <button class="float-move-btn" data-dir="up">⬆️</button>
+                            <button class="float-move-btn" data-dir="left">⬅️</button>
+                            <button class="float-move-btn" data-dir="right">➡️</button>
+                            <button class="float-move-btn" data-dir="down">⬇️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-panel" id="commands-panel">
+                <div class="controls-container">
+                    <div class="control-section">
+                        <div class="section-title" data-i18n="commands.title">Command Input</div>
+                        <textarea id="command-input" class="command-input" data-i18n-placeholder="commands.placeholder"></textarea>
+                        <button id="execute-commands" class="action-button" data-i18n="commands.execute">Execute Commands</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-panel" id="settings-panel">
+                <div class="controls-container">
+                    <div class="control-section">
+                        <div class="section-title" data-i18n="settings.movement">Movement</div>
+                        <div class="position-display" id="position" data-i18n="settings.position" data-i18n-args="x,y">Position: (3, 2)</div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="show-floating-controls" checked>
+                            <label for="show-floating-controls" data-i18n="settings.showControls">Show on-screen controls</label>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="click-move" checked>
+                            <label for="click-move" data-i18n="settings.clickToMove">Click cells to move</label>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="show-path">
+                            <label for="show-path" data-i18n="settings.showTrail">Show movement trail</label>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="preserve-trail">
+                            <label for="preserve-trail" data-i18n="settings.preserveTrail">Preserve movement trail</label>
+                        </div>
+                        <div class="control-row">
+                            <label data-i18n="settings.speed">Speed:</label>
+                            <input type="range" id="move-speed" class="speed-slider" min="100" max="1000" value="300" step="50">
+                            <span id="move-speed-value" class="slider-value">300ms</span>
+                        </div>
+                        <button id="clear-trail" class="action-button" data-i18n="settings.clearTrail">Clear Trail</button>
+                    </div>
+                    <div class="control-section">
+                        <div class="section-title" data-i18n="settings.gridSize">Grid Size</div>
+                        <div class="grid-size-controls">
+                            <label data-i18n="settings.width">Width:</label>
+                            <input type="number" id="grid-width" min="3" max="10" value="7">
+                            <label data-i18n="settings.height">Height:</label>
+                            <input type="number" id="grid-height" min="3" max="10" value="5">
+                            <button id="resize-grid" class="resize-button" title="Apply">↻</button>
+                        </div>
+                    </div>
+                    <div class="control-section">
+                        <div class="section-title" data-i18n="settings.animation">Animation</div>
+                        <div class="control-row">
+                            <label data-i18n="settings.preview">Preview:</label>
+                            <select id="animation-select"></select>
+                        </div>
+                        <div class="control-row">
+                            <label data-i18n="settings.animSpeed">Speed:</label>
+                            <input type="range" id="speed-slider" class="speed-slider" min="1" max="15" value="8">
+                            <span id="speed-value" class="slider-value" data-i18n="settings.fps" data-i18n-args="value">8 fps</span>
+                        </div>
+                        <button id="play-button" class="play-button">
+                            <span class="button-text" data-i18n="settings.playAnimation">▶️ Play Animation</span>
+                        </button>
+                        <div class="control-row">
+                            <label data-i18n="settings.idleFrame">Idle Frame:</label>
+                            <input type="number" id="idle-frame" min="0" max="2" value="0">
+                        </div>
+                    </div>
+                    <div class="control-section">
+                        <div class="section-title" data-i18n="settings.language">Language</div>
+                        <div class="control-row">
+                            <select id="language-select">
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="i18n.js"></script>
+    <script src="lang/English.js"></script>
+    <script src="lang/Spanish.js"></script>
+    <script src="Config.js"></script>
+    <script src="Utils.js"></script>
+    <script src="DirectionalHero.js"></script>
+    <script src="TabbedUI.js"></script>
+    <script src="Collectible.js"></script>
+    <script src="App.js"></script>
+</body>
+</html>

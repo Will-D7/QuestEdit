@@ -1,0 +1,118 @@
+.sidebar {
+    width: 80px;
+    background: #F3F4F6;
+    border-right: 3px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+}
+.tab-headers {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.tab-header {
+    padding: 15px 0;
+    background: none;
+    border: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: #6B7280;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.tab-icon {
+    font-size: 1.5em;
+}
+.tab-text {
+    font-size: 0.7em;
+}
+.tab-header:hover {
+    background: rgba(139, 92, 246, 0.1);
+    color: #7C3AED;
+}
+.tab-header.active {
+    color: #7C3AED;
+    background: white;
+}
+.tab-header.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #7C3AED;
+}
+.content-panel {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.content-panel.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+#grid-panel {
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+#commands-panel {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+}
+#settings-panel {
+    background: linear-gradient(135deg, #C084FC 0%, #A855F7 100%);
+}
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60px;
+    }
+    .tab-text {
+        display: none;
+    }
+    .tab-header {
+        padding: 10px 0;
+    }
+    .tab-icon {
+        font-size: 1.3em;
+    }
+}
+@media (orientation: portrait) {
+    .sidebar {
+        width: 100%;
+        height: 80px;
+        border-right: none;
+        border-top: 3px solid #E5E7EB;
+    }
+    .tab-headers {
+        flex-direction: row;
+        padding: 0 10px;
+        height: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .tab-header {
+        padding: 10px;
+        flex-direction: column;
+    }
+    .tab-header.active::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        width: auto;
+        height: 3px;
+    }
+    .tab-icon {
+        font-size: 1.2em;
+    }
+    .tab-text {
+        font-size: 0.6em;
+    }
+}
