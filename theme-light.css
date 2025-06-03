@@ -1,0 +1,124 @@
+:root[data-theme="light"] {
+    --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --app-bg: rgba(255, 255, 255, 0.95);
+    --sidebar-bg: #F3F4F6;
+    --sidebar-border: #E5E7EB;
+    --text-primary: #7C3AED;
+    --text-secondary: #6B7280;
+    --text-accent: #5B21B6;
+    --grid-bg: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+    --grid-cell-bg: rgba(255, 255, 255, 0.3);
+    --grid-cell-border: rgba(125, 211, 252, 0.5);
+    --grid-cell-hover: rgba(125, 211, 252, 0.3);
+    --grid-target-bg: rgba(16, 185, 129, 0.3);
+    --grid-target-border: #10B981;
+    --control-section-bg: linear-gradient(135deg, #FFE5B4 0%, #FFD4E5 100%);
+    --control-section-border: #FFB6C1;
+    --input-bg: white;
+    --input-border: #DDD3FF;
+    --button-primary: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+    --button-success: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+    --button-danger: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+    --button-accent: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
+    --tab-hover-bg: rgba(139, 92, 246, 0.1);
+    --tab-active-bg: white;
+    --tab-active-accent: #7C3AED;
+    --grid-panel-bg: transparent;
+    --cmd-panel-bg: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    --settings-panel-bg: linear-gradient(135deg, #C084FC 0%, #A855F7 100%);
+}
+body[data-theme="light"] {
+    background: var(--primary-bg);
+}
+.app-container[data-theme="light"] {
+    background: var(--app-bg);
+}
+[data-theme="light"] .sidebar {
+    background: var(--sidebar-bg);
+    border-right-color: var(--sidebar-border);
+}
+[data-theme="light"] .tab-header {
+    color: var(--text-secondary);
+}
+[data-theme="light"] .tab-header:hover {
+    background: var(--tab-hover-bg);
+    color: var(--text-primary);
+}
+[data-theme="light"] .tab-header.active {
+    color: var(--text-primary);
+    background: var(--tab-active-bg);
+}
+[data-theme="light"] .tab-header.active::before {
+    background: var(--tab-active-accent);
+}
+[data-theme="light"] .stage-area {
+    background: var(--grid-bg);
+}
+[data-theme="light"] .grid-cell {
+    background: var(--grid-cell-bg);
+    box-shadow: inset 1px 1px 0 rgba(125, 211, 252, 0.3), 
+                inset -1px -1px 0 rgba(125, 211, 252, 0.4),
+                inset 0 0 0 1px var(--grid-cell-border);
+}
+[data-theme="light"] .grid-cell:hover {
+    background: var(--grid-cell-hover);
+}
+[data-theme="light"] .grid-cell.target {
+    background: var(--grid-target-bg);
+    box-shadow: inset 1px 1px 0 rgba(16, 185, 129, 0.4), 
+                inset -1px -1px 0 rgba(16, 185, 129, 0.5),
+                inset 0 0 0 1px var(--grid-target-border);
+}
+[data-theme="light"] .control-section {
+    background: var(--control-section-bg);
+    border-color: var(--control-section-border);
+}
+[data-theme="light"] .section-title,
+[data-theme="light"] label {
+    color: var(--text-primary);
+}
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+    background: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--text-accent);
+}
+[data-theme="light"] .float-move-btn {
+    background: var(--button-primary);
+}
+[data-theme="light"] .play-button {
+    background: var(--button-success);
+}
+[data-theme="light"] .play-button.playing {
+    background: var(--button-danger);
+}
+[data-theme="light"] .action-button {
+    background: var(--button-accent);
+}
+[data-theme="light"] #grid-panel {
+    background: var(--grid-panel-bg);
+}
+[data-theme="light"] #commands-panel {
+    background: var(--cmd-panel-bg);
+}
+[data-theme="light"] #settings-panel {
+    background: var(--settings-panel-bg);
+}
+[data-theme="light"] .collectible-info {
+    background: rgba(255, 255, 255, 0.9);
+}
+[data-theme="light"] .collectible-info h3,
+[data-theme="light"] .collectibles-rules p,
+[data-theme="light"] .collectibles-rules strong {
+    color: var(--text-primary);
+}
+[data-theme="light"] .controls-container::-webkit-scrollbar-track {
+    background: #F3F4F6;
+}
+[data-theme="light"] .controls-container::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+}
+[data-theme="light"] .controls-container::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}

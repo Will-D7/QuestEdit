@@ -1,0 +1,46 @@
+.gameItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    user-select: none;
+    pointer-events: none;
+}
+.gameItem {
+    box-shadow: 
+        0 2px 8px rgba(0,0,0,0.2),
+        0 4px 16px rgba(0,0,0,0.1);
+}
+.gameItem[style*="width: 9"],
+.gameItem[style*="width: 8"] {
+    box-shadow: 
+        0 3px 12px rgba(0,0,0,0.25),
+        0 6px 20px rgba(0,0,0,0.15);
+}
+.gameItem[style*="width: 5"],
+.gameItem[style*="width: 4"],
+.gameItem[style*="width: 3"] {
+    box-shadow: 
+        0 1px 4px rgba(0,0,0,0.15),
+        0 2px 8px rgba(0,0,0,0.1);
+}
+.gameItem > div {
+    text-align: center;
+    line-height: 1;
+    pointer-events: none;
+}
+.grid-cell.invalid-drop {
+    background: rgba(239, 68, 68, 0.2) !important;
+    box-shadow: inset 0 0 0 2px #EF4444 !important;
+}
+.gameItem:hover {
+    filter: brightness(1.1);
+}
+.hero-container .gameItem {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+.grid-cell {
+    position: relative;
+    overflow: visible;
+}

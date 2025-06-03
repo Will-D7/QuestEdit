@@ -1,0 +1,92 @@
+{
+    "itemTypes": {
+        "A": {
+            "name": "A",
+            "width": "90%",
+            "height": "90%",
+            "color": "#FF6B6B",
+            "transparency": 0.9,
+            "hasUnicodeCharacter": true,
+            "unicodeCharacter": "A",
+            "hasBorder": true,
+            "borderType": "solid",
+            "borderWidth": 3,
+            "borderColor": "#EE5A6F",
+            "pickable": true,
+            "stepable": false,
+            "stackable": true,
+            "allowBiggerToStack": false
+        },
+        "B": {
+            "name": "B",
+            "width": "70%",
+            "height": "70%",
+            "color": "#4ECDC4",
+            "transparency": 0.9,
+            "hasUnicodeCharacter": true,
+            "unicodeCharacter": "B",
+            "hasBorder": true,
+            "borderType": "dashed",
+            "borderWidth": 2,
+            "borderColor": "#45B7B8",
+            "pickable": true,
+            "stepable": false,
+            "stackable": true,
+            "allowBiggerToStack": false
+        },
+        "C": {
+            "name": "C",
+            "width": "50%",
+            "height": "50%",
+            "color": "#FFE66D",
+            "transparency": 0.8,
+            "hasUnicodeCharacter": true,
+            "unicodeCharacter": "C",
+            "hasBorder": true,
+            "borderType": "solid",
+            "borderWidth": 2,
+            "borderColor": "#FFD93D",
+            "pickable": true,
+            "stepable": false,
+            "stackable": true,
+            "allowBiggerToStack": false
+        },
+        "D": {
+            "name": "D",
+            "width": "100%",
+            "height": "100%",
+            "color": "#B794F4",
+            "transparency": 0.3,
+            "hasUnicodeCharacter": false,
+            "hasBorder": false,
+            "pickable": false,
+            "stepable": true,
+            "stackable": true,
+            "allowBiggerToStack": false
+        },
+        "E": {
+            "name": "E",
+            "width": "80%",
+            "height": "80%",
+            "color": "#F687B3",
+            "transparency": 1.0,
+            "hasUnicodeCharacter": true,
+            "unicodeCharacter": "◆",
+            "hasBorder": true,
+            "borderType": "double",
+            "borderWidth": 3,
+            "borderColor": "#D53F8C",
+            "pickable": true,
+            "stepable": false,
+            "stackable": true,
+            "allowBiggerToStack": true
+        }
+    },
+    "map": [
+        [0, 0, 0, 0, 0, 0, "A:★"],
+        [0, "A,B:8", 0, 0, 0, 0, "C:♠"],
+        [0, 0, "A:😃", 0, 0, 0, 0],
+        ["B:♥", 0, 0, "B:あ", 0, "A:7", 0],
+        ["E:$", 0, 0, 0, "C:♣", 0, 0]
+    ]
+}
