@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import DndScreen from "./pages/DndScreen";
+import RobotGame from "./pages/robotGame";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/robotGame" element={<DndScreen />} />
+      <Route path="/robotGame" element={<RobotGame />} />
+      
     </Routes>
   );
 }
