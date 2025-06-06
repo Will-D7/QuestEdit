@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import RobotGame from "./pages/robotGame";
 import EditorPage from "./pages/Editors";
@@ -8,7 +9,7 @@ function App() {
     <Routes>
       <Route path="/"               element={<Home />} />
       <Route path="/robotGame"      element={<RobotGame />} />
-      <Route path="/Editors"        element={<EditorPage />}/>
+      <Route path="/editors"        element={<EditorPage />}/>
     </Routes>
   );
 }
