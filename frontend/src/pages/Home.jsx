@@ -20,19 +20,19 @@ function Home() {
             <nav className="sidebar-nav">
               <div className="nav-group">
                 <h3 className="nav-title">Tipos de preguntas</h3>
-                <Link to="/templates/multiple-choice" className="nav-item">📝 Selección múltiple</Link>
-                <Link to="/templates/drag-drop" className="nav-item">🧲 Arrastra y suelta</Link>
-                <Link to="/templates/matching" className="nav-item">🔗 Emparejar</Link>
-                <Link to="/templates/puzzle" className="nav-item">🧩 Puzzle</Link>
-                <Link to="/templates/sorting" className="nav-item">📊 Clasificar</Link>
+                <Link to="/templates/multiple-choice"   className="nav-item">&#128221; Selección múltiple</Link>
+                <Link to="/templates/drag-drop"         className="nav-item">&#128260; Arrastra y suelta</Link>
+                <Link to="/templates/matching"          className="nav-item">&#128279; Emparejar</Link>
+                <Link to="/templates/puzzle"            className="nav-item">&#129513; Puzzle</Link>
+                <Link to="/templates/sorting"           className="nav-item">&#128202; Clasificar</Link>
               </div>
 
               <div className="nav-group">
                 <h3 className="nav-title">Manejo</h3>
-                <Link to="/questions" className="nav-item">📚 Mis preguntas</Link>
-                <Link to="/collections" className="nav-item">📁 Colección</Link>
-                <Link to="/shared" className="nav-item">👥 Compartidos conmigo</Link>
-                <Link to="/editors" className="nav-item">Editores</Link>
+                <Link to="/questions"   className="nav-item">&#128218; Mis preguntas</Link>
+                <Link to="/collections" className="nav-item">&#128193; Colección</Link>
+                <Link to="/shared"      className="nav-item">&#128101; Compartidos conmigo</Link>
+                <Link to="/editors"     className="nav-item">&#128102; Editores</Link>
               </div>
             </nav>
           </div>

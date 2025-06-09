@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { GameStateContext } from '../context/GameStateContext';
+import { useGameState } from '../context/GameStateContext';
 
 const Controls = () => {
-  const { position, setPosition, gridSize } = useContext(GameStateContext);
+  const { robotPosition, setRobotPosition } = useGameState;
 
   const move = (dx, dy) => {
     const newX = Math.max(0, Math.min(gridSize.width - 1, position.x + dx));
