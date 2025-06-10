@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Editor y Juego de Mapa</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="viewport">
+        <div id="grid-container"></div>
+        <div id="hero-layer">
+            <div id="hero">
+                <div id="hero-item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <strong>Cuadrícula:</strong> <span id="grid-size">7×5</span><br>
+        <strong>Zoom:</strong> <span id="zoom">100%</span><br>
+        <strong>Celda:</strong> <span id="cell">0,0</span><br>
+        <strong>Modo:</strong> <span id="mode">Jugar</span>
+    </div>
+    <div class="dpad">
+        <button class="dpad-btn dpad-up" data-dir="up">↑</button>
+        <button class="dpad-btn dpad-down" data-dir="down">↓</button>
+        <button class="dpad-btn dpad-left" data-dir="left">←</button>
+        <button class="dpad-btn dpad-right" data-dir="right">→</button>
+        <button class="dpad-btn dpad-center" id="pick-drop">✋</button>
+    </div>
+    <button class="hero-switch-btn" id="hero-switch" title="Cambiar héroe">👤</button>
+    <div class="action-buttons">
+        <button class="action-btn hidden" id="clear-btn" title="Limpiar Mapa">🗑️</button>
+        <button class="action-btn hidden" id="save-btn" title="Guardar Mapa">💾</button>
+        <button class="action-btn hidden" id="load-btn" title="Cargar Mapa">📁</button>
+    </div>
+    <button class="fab" id="fab">✏️</button>
+    <div class="editor-panel" id="editor-panel">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="place">Colocar Items</button>
+            <button class="tab-btn" data-tab="types">Editar Tipos</button>
+            <button class="tab-btn" data-tab="settings">Configuración</button>
+        </div>
+        <div class="tab-content active" data-content="place">
+            <div class="item-types-grid" id="item-types-grid"></div>
+            <div class="form-group">
+                <label>Texto del Item (opcional):</label>
+                <input type="text" id="item-text" placeholder="Ingresa texto o emoji">
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary" id="eraser-btn">🧹 Modo Borrador</button>
+            </div>
+        </div>
+        <div class="tab-content" data-content="types">
+            <div class="form-group">
+                <label>Seleccionar Tipo:</label>
+                <select id="type-selector"></select>
+            </div>
+            <div class="form-group">
+                <label>Tamaño (%):</label>
+                <input type="range" id="type-size" min="10" max="100" step="10">
+                <span id="size-value">50%</span>
+            </div>
+            <div class="form-group">
+                <label>Color:</label>
+                <div class="color-input-wrapper">
+                    <input type="color" id="type-color">
+                    <div class="color-preview" id="color-preview"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Transparencia:</label>
+                <input type="range" id="type-transparency" min="0" max="1" step="0.1">
+                <span id="transparency-value">1.0</span>
+            </div>
+            <div class="form-group">
+                <label>Borde:</label>
+                <select id="type-border">
+                    <option value="none">Ninguno</option>
+                    <option value="solid">Sólido</option>
+                    <option value="dashed">Discontinuo</option>
+                    <option value="double">Doble</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Propiedades:</label>
+                <label><input type="checkbox" id="type-pickable"> Recogible</label><br>
+                <label><input type="checkbox" id="type-stepable"> Pisable</label><br>
+                <label><input type="checkbox" id="type-stackable"> Apilable</label>
+            </div>
+            <button class="btn btn-primary" id="add-type-btn">➕ Agregar Nuevo Tipo</button>
+        </div>
+        <div class="tab-content" data-content="settings">
+            <div class="form-group">
+                <label>Categoría:</label>
+                <input type="text" id="map-category" placeholder="Ej: Matemáticas, Lógica, etc.">
+            </div>
+            <div class="form-group">
+                <label>Dificultad:</label>
+                <select id="map-difficulty">
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Medio</option>
+                    <option value="dificil">Difícil</option>
+                    <option value="experto">Experto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Descripción:</label>
+                <textarea id="map-description" placeholder="Descripción del mapa o instrucciones..." style="min-height: 100px;"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="save-load-modal">
+        <div class="modal-content">
+            <div class="modal-header" id="modal-title">Datos del Mapa</div>
+            <textarea id="map-json"></textarea>
+            <div class="btn-group">
+                <button class="btn btn-secondary" id="modal-cancel">Cancelar</button>
+                <button class="btn btn-primary" id="modal-confirm">Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/App.js"></script>
+</body>
+</html>
