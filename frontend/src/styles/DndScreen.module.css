@@ -1,12 +1,13 @@
 .programRobotScreen {
   padding: 24px;
   font-family: sans-serif;
+  background-color: #e3f6f8; /* Fondo claro para matchear el dashboard */
 }
 
 .instructions {
   margin: 12px 0;
   font-size: 16px;
-  color: #444;
+  color: #333;
 }
 
 .programContainer {
@@ -22,12 +23,7 @@
   min-width: 300px;
 }
 
-.programControls {
-  margin-top: 24px;
-  display: flex;
-  gap: 12px;
-}
-
+/* Botones */
 .playButton {
   padding: 12px 20px;
   font-size: 16px;
@@ -56,4 +52,79 @@
 
 .controlButton:hover {
   background-color: #d32f2f;
+}
+
+/* Draggable Item */
+.draggableItem {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #fdfbff; /* Fondo claro */
+  cursor: grab;
+  transition: background-color 0.2s ease;
+}
+
+.dragging {
+  opacity: 0.5;
+  background-color: #e4dcfc; /* Color pastel al arrastrar */
+}
+
+.commandTitle {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Nested buttons */
+.nestedToggle {
+  background-color: #bbaaf7;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.nestedToggle:hover {
+  background-color: #a897ec;
+}
+
+.nestedLabel {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.nestedCommands {
+  border: 2px dashed #aaa;
+  padding: 10px;
+  min-height: 50px;
+  margin-top: 5px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+/* Drop zones */
+.dropZone {
+  border: 2px dashed #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 12px;
+  background-color: #f3f2fc; /* Color claro suave */
+  transition: background-color 0.3s ease;
+}
+
+.draggingOver {
+  background-color: #e0f7fa;
+  border-color: #26c6da;
 }
