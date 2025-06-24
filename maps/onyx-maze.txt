@@ -1,0 +1,111 @@
+{
+    "version": "1.0",
+    "saved_at": "2025-06-22 18:44:51",
+    "data": {
+	  "category": "Laberintos",
+	  "difficulty": "medio",
+	  "description": "Un laberinto con paredes. Encuentra el camino a la meta.",
+	  "itemTypes": {
+		"A": {
+		  "width": "90%",
+		  "height": "90%",
+		  "color": "#FF6B6B",
+		  "transparency": 0.9,
+		  "borderType": "solid",
+		  "borderWidth": 3,
+		  "borderColor": "#EE5A6F",
+		  "pickable": true,
+		  "stepable": false,
+		  "stackable": true,
+		  "allowBiggerToStack": false
+		},
+		"B": {
+		  "width": "70%",
+		  "height": "70%",
+		  "color": "#4ECDC4",
+		  "transparency": 0.9,
+		  "borderType": "dashed",
+		  "borderWidth": 2,
+		  "borderColor": "#45B7B8",
+		  "pickable": true,
+		  "stepable": false,
+		  "stackable": true,
+		  "allowBiggerToStack": false
+		},
+		"C": {
+		  "width": "50%",
+		  "height": "50%",
+		  "color": "#FFE66D",
+		  "transparency": 0.8,
+		  "borderType": "solid",
+		  "borderWidth": 2,
+		  "borderColor": "#FFD93D",
+		  "pickable": true,
+		  "stepable": false,
+		  "stackable": true,
+		  "allowBiggerToStack": true
+		},
+		"D": {
+		  "width": "100%",
+		  "height": "100%",
+		  "color": "#B794F4",
+		  "transparency": 0.3,
+		  "borderType": "none",
+		  "pickable": false,
+		  "stepable": true,
+		  "stackable": true,
+		  "allowBiggerToStack": true
+		},
+		"E": {
+		  "width": "80%",
+		  "height": "80%",
+		  "color": "#F687B3",
+		  "transparency": 1.0,
+		  "borderType": "double",
+		  "borderWidth": 3,
+		  "borderColor": "#D53F8C",
+		  "pickable": true,
+		  "stepable": false,
+		  "stackable": true,
+		  "allowBiggerToStack": false
+		},
+		"W": {
+		  "width": "100%",
+		  "height": "100%",
+		  "color": "#333333",
+		  "transparency": 1.0,
+		  "borderType": "none",
+		  "pickable": false,
+		  "stepable": false,
+		  "stackable": false,
+		  "allowBiggerToStack": false
+		},
+		"G": {
+		  "width": "70%",
+		  "height": "70%",
+		  "color": "#4CAF50",
+		  "transparency": 0.8,
+		  "borderType": "solid",
+		  "borderWidth": 2,
+		  "borderColor": "#2E7D32",
+		  "pickable": false,
+		  "stepable": true,
+		  "stackable": false,
+		  "allowBiggerToStack": false
+		}
+	  },
+	  "map": [
+		[0, 0, "W", "W", "W", "W", "W", "W", "W", "W"],
+		["W", 0, 0, 0, "W", 0, 0, 0, 0, "W"],
+		["W", 0, "W", 0, "W", 0, "W", "W", 0, "W"],
+		["W", 0, "W", 0, 0, 0, "W", 0, 0, "W"],
+		["W", 0, "W", "W", "W", "W", "W", 0, "W", "W"],
+		["W", 0, 0, 0, 0, 0, 0, 0, 0, "W"],
+		["W", "W", "W", "W", 0, "W", "W", "W", 0, "W"],
+		["W", 0, 0, 0, 0, "W", 0, 0, 0, "W"],
+		["W", 0, "W", "W", "W", "W", 0, "W", "G:🏁", "W"],
+		["W", "W", "W", "W", "W", "W", "W", "W", "W", "W"]
+	  ]
+	}
+}
+
