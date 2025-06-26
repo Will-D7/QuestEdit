@@ -35,6 +35,7 @@ class DPadExtension extends Extension {
             className: 'dpad-btn dpad-center',
             id: 'pick-drop',
             textContent: '✋',
+            title: 'Agarrar',
             onclick: () => this.handleInteract()
         });
         dpad.appendChild(centerBtn);

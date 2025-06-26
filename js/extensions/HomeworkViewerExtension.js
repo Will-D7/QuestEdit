@@ -8,7 +8,7 @@ class HomeworkViewerExtension extends Extension {
         const fab = this.createElement('button', {
             className: 'hw-fab',
             id: 'hw-fab',
-            title: 'Tareas',
+            title: 'Tareas Asignadas',
             textContent: '📚',
             onclick: () => this.showHomeworkModal()
         });

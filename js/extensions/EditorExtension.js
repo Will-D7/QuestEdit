@@ -15,6 +15,7 @@ class EditorExtension extends Extension {
         this.elements.fab = this.createElement('button', {
             className: 'fab',
             id: 'fab',
+            title: 'Editar Mapa',
             textContent: '✏️',
             onclick: () => this.app.toggleMode('edit')
         });
@@ -50,6 +51,12 @@ class EditorExtension extends Extension {
             className: 'editor-panel',
             id: 'editor-panel'
         });
+        const closeX = this.createElement('span', {
+            className: 'close-x',
+            textContent: 'X',
+            onclick: () => this.app.toggleMode('play') // o this.emit('editor:close')
+        });
+        panel.appendChild(closeX);
         const tabs = this.createElement('div', { className: 'tabs' });
         const tabButtons = [
             { id: 'place', label: 'Colocar Items' },
@@ -73,6 +80,8 @@ class EditorExtension extends Extension {
                 btn.classList.toggle('active', btn.dataset.tab === tab);
             });
         });
+        
+        
     }
     clearMap() {
         if (!confirm('¿Limpiar todo el mapa?')) return;

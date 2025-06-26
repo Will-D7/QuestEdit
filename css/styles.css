@@ -251,6 +251,16 @@ body {
 	display: none;
 	z-index: 999;
 }
+.close-x {
+	margin-left: 330px;
+	font-size: 22px;
+	font-weight: bold;
+	color: white;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	z-index: 1000;
+  }
 .editor-panel.show, .prog-panel.show {
 	display: block;
 }
