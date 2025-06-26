@@ -1,0 +1,9 @@
+{
+    "title": "Laberinto de Movimientos",
+    "map": "maze_map",
+    "instructions": "Guía al héroe a través del laberinto usando comandos de movimiento. Evita los obstáculos y llega al punto final.",
+    "difficulty": "medio",
+    "dueDate": "2023-12-15",
+    "objectives": "1. Usar comandos básicos de movimiento\n2. Planificar una secuencia de pasos\n3. Ejecutar el programa completo",
+    "createdAt": "2023-11-01 14:30:00"
+}

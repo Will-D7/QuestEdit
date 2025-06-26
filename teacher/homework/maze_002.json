@@ -1,0 +1,9 @@
+{
+    "title": "maze 002",
+    "map": "onyx-maze",
+    "instructions": "resuelve el laberinto",
+    "difficulty": "f\u00e1cil",
+    "dueDate": "2025-07-30",
+    "objectives": "usar call\/return",
+    "createdAt": "2025-06-25 10:20:49"
+}
